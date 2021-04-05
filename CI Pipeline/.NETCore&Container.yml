@@ -24,22 +24,13 @@ jobs:
       selectOrConfig: config
       nugetConfigPath: nuget.config
       noCache: true
-  - task: SonarQubePrepare@4
-    displayName: Prepare analysis on SonarQube
-    inputs:
-      SonarQube:
-      projectKey: API
-      projectName: API
-      projectVersion: ${1}0.$(system.definitionId).$(Build.DefinitionVersion).$(Build.BuildId)${5}
+  
   - task: DotNetCoreCLI@2
     displayName: dotnet build & Publish
     inputs:
       projects: API.sln
       arguments: /t:Publish /p:OutputPath=$(Build.artifactstagingdirectory)\app /p:configuration=$(PRO.Configuration)
-  - task: SonarQubeAnalyze@4
-    displayName: Run Code Analysis
-  - task: SonarQubePublish@4
-    displayName: Publish Quality Gate Result
+ 
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.artifactstagingdirectory)'
     inputs:
