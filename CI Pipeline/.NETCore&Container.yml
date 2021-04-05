@@ -12,7 +12,7 @@ jobs:
   displayName: Build
   cancelTimeoutInMinutes: 1
   pool:
-    name: CloudBuild
+    name: Default
   steps:
   - checkout: self
     clean: true
