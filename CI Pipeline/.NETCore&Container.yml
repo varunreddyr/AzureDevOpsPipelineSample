@@ -86,9 +86,9 @@ jobs:
       imageName: $(PRO.Configuration)/API:$(Build.BuildNumber)
       includeLatestTag: true
   - task: NuGetCommand@2
-  inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
-    vstsFeed: '09af53e0-4f44-4e49-819d-2d03f116da6f/3c6e8f92-2ba4-4fd7-a9a5-df762d7ffaec'
+    inputs:
+     command: 'restore'
+     restoreSolution: '**/*.sln'
+     feedsToUse: 'select'
+     vstsFeed: '09af53e0-4f44-4e49-819d-2d03f116da6f/3c6e8f92-2ba4-4fd7-a9a5-df762d7ffaec'
 
