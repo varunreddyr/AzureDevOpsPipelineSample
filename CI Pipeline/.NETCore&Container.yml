@@ -45,7 +45,7 @@ jobs:
 - job: Job_1
   displayName: Build Docker Agent
   pool:
-    name: Docker2004
+    name: Default
   steps:
   - checkout: self
     clean: true
