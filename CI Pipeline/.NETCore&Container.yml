@@ -24,13 +24,6 @@ jobs:
       selectOrConfig: config
       nugetConfigPath: nuget.config
       noCache: true
-  - task: replacetokens@2
-    displayName: Replace in settings
-    inputs:
-      rootDirectory: API
-      targetFiles: >-
-        appsettings.Release.json
-      actionOnMissing: fail
   - task: SonarQubePrepare@4
     displayName: Prepare analysis on SonarQube
     inputs:
